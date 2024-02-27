@@ -1,0 +1,9 @@
+This showcase explores the intricacies of object-oriented programming (OOP) through the development of a captivating tower defense game. 
+Tower defense games are a popular genre in the realm of gaming, characterized by strategic placement of defensive structures to thwart incoming waves of enemies.
+In this project, we delve into the principles of OOP to design a robust and extensible architecture for our game. 
+Through the implementation of classes, inheritance, and other OOP principles, 
+we create a flexible framework that facilitates the addition of new features and entities with ease.
+The showcase highlights the significance of abstraction in modeling various game elements such as towers, enemies, levels, and gameplay mechanics. 
+By utilizing OOP concepts effectively, we achieve modularity and maintainability, enabling seamless collaboration among developers and ensuring code scalability.
+We take advantage of pythons powerful library, pygame, in order to display the logic and objects we created for this game.
+Overall, this showcase demonstrates how OOP serves as a powerful paradigm for designing and implementing complex systems, as evidenced by the creation of an engaging and dynamic tower defense game.
