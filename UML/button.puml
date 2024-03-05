@@ -1,0 +1,101 @@
+@startuml
+
+' Define skin parameters
+!define CLASS_CLASSIFIER_TEMPLATE
+hide members
+hide methods
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+!define CLASS_CLASSIFIER_ATTRIBUTES
+show members
+hide methods
+
+!define CLASS_CLASSIFIER_METHODS
+hide members
+show methods
+
+!define CLASS_CLASSIFIER_NONE
+hide members
+hide methods
+
+!define CLASS_CLASSIFIER_ALL
+show members
+show methods
+
+' Logical View
+package "Logical View" {
+    class "Button" <<LogicalView>> {
+        - location: Point
+        - image: Image
+
+        + __init__(location: Point, image: Image)
+        + draw(): None
+        + check_click(mouse_position: Point): bool
+    }
+
+    class "Enemy" <<LogicalView>> {
+        - image: Image
+        - movement_speed: float
+        - attack_speed: float
+        - spawn_location: Point
+
+        + __init__(image: Image, movement_speed: float, attack_speed: float, spawn_location: Point)
+        + attack_tower(tower: Tower): None
+        + delete(): None
+    }
+}
+
+' Process View
+package "Process View" {
+    class "Use Cases" <<ProcessView>> {
+        + Use Case 1
+        + Use Case 2
+        + Use Case 3
+    }
+}
+
+' Development View
+package "Development View" {
+    class "Modules" <<DevelopmentView>> {
+        + Module 1
+        + Module 2
+        + Module 3
+    }
+}
+
+' Physical View
+package "Physical View" {
+    class "Components" <<PhysicalView>> {
+        + Component 1
+        + Component 2
+        + Component 3
+    }
+}
+
+' Scenarios
+package "Scenarios" {
+    class "Use Case Scenarios" <<Scenarios>> {
+        + Scenario 1
+        + Scenario 2
+        + Scenario 3
+    }
+}
+
+' Relationships between views
+' Logical View to Process View
+"Logical View" --> "Process View"
+
+' Logical View to Development View
+"Logical View" --> "Development View"
+
+' Logical View to Physical View
+"Logical View" --> "Physical View"
+
+' Logical View to Scenarios
+"Logical View" --> "Scenarios"
+
+@enduml

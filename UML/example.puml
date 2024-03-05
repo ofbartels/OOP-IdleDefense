@@ -1,0 +1,88 @@
+@startuml
+
+' Define skin parameters
+!define CLASS_CLASSIFIER_TEMPLATE
+hide members
+hide methods
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+!define CLASS_CLASSIFIER_ATTRIBUTES
+show members
+hide methods
+
+!define CLASS_CLASSIFIER_METHODS
+hide members
+show methods
+
+!define CLASS_CLASSIFIER_NONE
+hide members
+hide methods
+
+!define CLASS_CLASSIFIER_ALL
+show members
+show methods
+
+' Logical View
+package "Logical View" {
+    class "Domain Model" <<LogicalView>> {
+        + Entities
+        + Value Objects
+        + Domain Services
+        + Aggregates
+    }
+}
+
+' Process View
+package "Process View" {
+    class "Use Cases" <<ProcessView>> {
+        + Use Case 1
+        + Use Case 2
+        + Use Case 3
+    }
+}
+
+' Development View
+package "Development View" {
+    class "Modules" <<DevelopmentView>> {
+        + Module 1
+        + Module 2
+        + Module 3
+    }
+}
+
+' Physical View
+package "Physical View" {
+    class "Components" <<PhysicalView>> {
+        + Component 1
+        + Component 2
+        + Component 3
+    }
+}
+
+' Scenarios
+package "Scenarios" {
+    class "Use Case Scenarios" <<Scenarios>> {
+        + Scenario 1
+        + Scenario 2
+        + Scenario 3
+    }
+}
+
+' Relationships between views
+' Logical View to Process View
+"Logical View" --> "Process View"
+
+' Process View to Development View
+"Process View" --> "Development View"
+
+' Development View to Physical View
+"Development View" --> "Physical View"
+
+' Physical View to Scenarios
+"Physical View" --> "Scenarios"
+
+@enduml
